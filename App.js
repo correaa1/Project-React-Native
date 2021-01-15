@@ -23,6 +23,12 @@ export default function App() {
           placeholder="Senha"
           autoCorrect={false}
           onChangeText={() => {}}
+          secureTextEntry={true}
+          works
+          password={true}
+          does
+          not
+          work
         />
         <TouchableOpacity style={styles.btnSubmit}>
           <Text style={styles.submitText}>Acessar</Text>
