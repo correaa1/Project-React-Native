@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {Link} from 'react-router-native';
 
 export const Container = styled.View`
   display: flex;
@@ -16,7 +17,7 @@ export const CampoInput = styled.TextInput`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70 %;
+  width: 70%;
   height: 55px;
   font-size: 17px;
   padding: 3px 10px 3px;

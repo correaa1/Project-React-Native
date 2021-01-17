@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-native';
+
 import {
   View,
   Text,
@@ -24,7 +26,9 @@ const Login = () => {
         </Acessar>
 
         <CriarCadastro>
-          <Texto>Criar Cadastro</Texto>
+          <Link to="/create">
+            <Texto>Criar Cadastro</Texto>
+          </Link>
         </CriarCadastro>
       </Container>
     </KeyboardAvoidingView>
