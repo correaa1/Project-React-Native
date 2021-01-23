@@ -9,22 +9,23 @@ export const Container = styled.View`
 
 export const ViewInput = styled.View`
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
 `;
 export const CampoInput = styled.TextInput`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70%;
-  height: 40px;
+  height: 35px;
   font-size: 17px;
+  padding: 3px 10px 3px;
   border-radius: 5px;
-  padding: 2px 5px 2px;
 `;
 export const ButtonBack = styled.TouchableOpacity`
   display: flex;
   flex-direction: row;
-  width: 30%;
+  width: 15%;
   height: 30px;
   font-size: 25px;
 `;
