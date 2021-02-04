@@ -4,7 +4,15 @@ import {Text} from 'react-native';
 
 import {Link} from 'react-router-native';
 
-import {Container, CampoInput, ViewInput, ButtonBack} from './styles';
+import AsyncStorage from 'react-native-community/async-storage';
+
+import {
+  Container,
+  CampoInput,
+  ViewInput,
+  ButtonBack,
+  ButtonCreate,
+} from './styles';
 
 const HealthData = () => {
   return (
@@ -79,6 +87,12 @@ const HealthData = () => {
           onChangeText={() => {}}
         />
       </ViewInput>
+
+      <ButtonBack>
+        <Link to="/">
+          <Text>Criar cadastro</Text>
+        </Link>
+      </ButtonBack>
     </Container>
   );
 };

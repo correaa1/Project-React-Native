@@ -6,6 +6,8 @@ import {Text, View, TouchableOpacity} from 'react-native';
 
 import {Container, CampoInput, ViewInput, ButtonBack} from './styles';
 
+import AsyncStorage from 'react-native-community/async-storage';
+
 const CreateAccount = () => {
   return (
     <Container>
@@ -21,6 +23,15 @@ const CreateAccount = () => {
 
       <ViewInput>
         <Text>Nome: </Text>
+        <CampoInput
+          placeholder="Preencha seu nome"
+          autoCorrect={false}
+          onChangeText={() => {}}
+        />
+      </ViewInput>
+
+      <ViewInput>
+        <Text>Email: </Text>
         <CampoInput
           placeholder="Preencha seu nome"
           autoCorrect={false}

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-native';
+import AsyncStorage from 'react-native-community/async-storage';
 
 import {
   View,
@@ -19,6 +20,7 @@ const Login = () => {
           placeholder="Email"
           autoCorrect={false}
           onChangeText={() => {}}
+          onpress={this.gravaEmail}
         />
 
         <Acessar>
