@@ -4,8 +4,6 @@ import {Text} from 'react-native';
 
 import {Link} from 'react-router-native';
 
-import AsyncStorage from 'react-native-community/async-storage';
-
 import {
   Container,
   CampoInput,

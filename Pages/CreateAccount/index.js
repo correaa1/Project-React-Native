@@ -1,35 +1,60 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {Link} from 'react-router-native';
 
 import {Text, View, TouchableOpacity} from 'react-native';
 
 import {Container, CampoInput, ViewInput, ButtonBack} from './styles';
-
-import AsyncStorage from 'react-native-community/async-storage';
+import {} from '../HealthData/styles';
 
 const CreateAccount = () => {
+  const [nome, setNome] = useState();
+
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('nome', value);
+      alert('salvando');
+    } catch (e) {
+      // saving error
+    }
+  };
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('nome');
+      if (value !== null) {
+        alert(nome);
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
   return (
     <Container>
-      <ButtonBack>
+      <ButtonBack
+        onPress={() => {
+          storeData(nome);
+        }}>
+        Back
         <Link to="/">
           <Text>Voltar</Text>
         </Link>
-
-        <Link to="/Health">
-          <Text>Dados de Saúde</Text>
-        </Link>
       </ButtonBack>
 
+      <ButtonBack>
+        <Link to="/Health">
+          <Text>Proximo</Text>
+        </Link>
+        /
+      </ButtonBack>
       <ViewInput>
         <Text>Nome: </Text>
         <CampoInput
           placeholder="Preencha seu nome"
           autoCorrect={false}
-          onChangeText={() => {}}
+          onChangeText={(text) => setNome(text)}
         />
       </ViewInput>
-
       <ViewInput>
         <Text>Email: </Text>
         <CampoInput
@@ -38,7 +63,6 @@ const CreateAccount = () => {
           onChangeText={() => {}}
         />
       </ViewInput>
-
       <ViewInput>
         <Text>Data de Nascimento: </Text>
 
@@ -48,7 +72,6 @@ const CreateAccount = () => {
           onChangeText={() => {}}
         />
       </ViewInput>
-
       <ViewInput>
         <Text>Altura </Text>
         <CampoInput
@@ -57,7 +80,6 @@ const CreateAccount = () => {
           onChangeText={() => {}}
         />
       </ViewInput>
-
       <ViewInput>
         <Text>Peso: </Text>
         <CampoInput

@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 
-import { Container } from './styles';
+import {Container} from './styles';
+
+import Menu from './Components/Menu/index';
+import Ficha from './Ficha/index';
 
 const Acesso = () => {
   return (
     <Container>
-      <Text>Acesso</Text>
+      <Menu />
+      <Ficha />
     </Container>
   );
 };
