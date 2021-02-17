@@ -21,7 +21,6 @@ const Menus = () => {
       <Button>
         <Text>Minha Ficha Técnica</Text>
       </Button>
-
       <Button>
         <Text>Minha Ficha Técnica</Text>
       </Button>
