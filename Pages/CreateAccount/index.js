@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-
 import {Link} from 'react-router-native';
-
 import {Text, View, TouchableOpacity} from 'react-native';
 
 import {Container, CampoInput, ViewInput, ButtonBack} from './styles';
-import {} from '../HealthData/styles';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -15,7 +12,7 @@ const CreateAccount = () => {
   const storeData = async (value) => {
     try {
       await AsyncStorage.setItem('nome', value);
-      alert('salvando');
+      alert(value);
     } catch (e) {
       // saving error
     }
@@ -24,30 +21,23 @@ const CreateAccount = () => {
   const getData = async () => {
     try {
       const value = await AsyncStorage.getItem('nome');
-      if (value !== null) {
-        alert(nome);
-      }
+      if (value) alert(value);
     } catch (e) {
       // error reading value
     }
   };
   return (
     <Container>
-      <ButtonBack
-        onPress={() => {
-          storeData(nome);
-        }}>
-        Back
+      <ButtonBack>
         <Link to="/">
           <Text>Voltar</Text>
         </Link>
       </ButtonBack>
-
-      <ButtonBack>
-        <Link to="/Health">
-          <Text>Proximo</Text>
-        </Link>
-        /
+      <ButtonBack
+        onPress={() => {
+          storeData(nome);
+        }}>
+        <Text>Proximo</Text>
       </ButtonBack>
       <ViewInput>
         <Text>Nome: </Text>
@@ -57,6 +47,7 @@ const CreateAccount = () => {
           onChangeText={(text) => setNome(text)}
         />
       </ViewInput>
+
       <ViewInput>
         <Text>Email: </Text>
         <CampoInput
@@ -65,6 +56,7 @@ const CreateAccount = () => {
           onChangeText={() => {}}
         />
       </ViewInput>
+
       <ViewInput>
         <Text>Data de Nascimento: </Text>
 
@@ -93,5 +85,4 @@ const CreateAccount = () => {
     </Container>
   );
 };
-
 export default CreateAccount;
